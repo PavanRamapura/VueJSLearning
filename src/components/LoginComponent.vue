@@ -9,19 +9,18 @@
           top
           color="green"
         ></v-progress-linear>
-        <p class="text-subtitle-1 text-center mt-2 primary-text-2">
+        <p class=" text-center mt-2 primary-text-2">
           Sign in to your account
         </p>
       </v-card-text>
       <v-card-text class="pb-1">
         <v-text-field outlined placeholder="Username"></v-text-field>
         <v-text-field outlined placeholder="Password"></v-text-field>
-        <v-row>
+        <v-row class="align-center">
           <v-col>
             <v-checkbox v-model="checkbox" label="Remember Me "></v-checkbox>
           </v-col>
           <v-col>
-           <!-- <a href="javascript:void(0);" @click="showForgotPWDForm">Forgot Password?</a>-->
            <router-link to="/forgotpassword">Forgot Password?</router-link>
           </v-col>
         </v-row>
@@ -35,8 +34,8 @@
       </v-card-text>
     </v-card>
     <br />
-    <v-card max-width="450px" height="60px" class="mx-auto">
-      <p class="primary-text-1 ls-08 text-center text-subtitle-2 pa-3 ml-3">
+    <v-card max-width="450px" height="60px" class="mx-auto align-center">
+      <p class="text-center mt-2 primary-text-2 pt-5 ">
         Don't have an account? <router-link to="/register">Create One</router-link>
       </p>
     </v-card>
@@ -48,6 +47,7 @@ export default {
   name: "Login",
   data: () => ({
     loading: false,
+    checkbox:""
   }),
 
   watch: {
@@ -66,8 +66,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container {
   padding: 170px;
+}
+@font-face {
+  font-family: GothamRounded;
+  src: url(../assets/GothamRounded-Light.otf);
+}
+.v-application p {
+  font-family: GothamRounded !important;
+  
 }
 </style>
